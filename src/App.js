@@ -22,6 +22,10 @@ const App = () => {
       date: new Date(2021, 9, 10),
     },
   ];
+  const addExpense = (expenses) => {
+    console.log("Data entered");
+    console.log(expenses);
+  };
   // return React.createElement(
   //   "div",
   //   {},
@@ -30,7 +34,7 @@ const App = () => {
   // );
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpense} />
       <Expenses data={expense} />
     </div>
   );
