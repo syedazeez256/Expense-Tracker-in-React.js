@@ -1,6 +1,7 @@
-import ExpenseItems from "./components/ExpenseItems";
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
-function App() {
+const App = () => {
   const expense = [
     {
       id: 1,
@@ -21,27 +22,18 @@ function App() {
       date: new Date(2021, 9, 10),
     },
   ];
+  // return React.createElement(
+  //   "div",
+  //   {},
+  //   React.createElement("h2", {}, "Lets get started!"),
+  //   React.createElement(Expenses, { data: expense })
+  // );
   return (
     <div>
-      <h2>Let's get started!</h2>
-      <p>This is paragraph !</p>
-      <ExpenseItems
-        title={expense[0].title}
-        amount={expense[0].amount}
-        date={expense[0].date}
-      ></ExpenseItems>
-      <ExpenseItems
-        title={expense[1].title}
-        amount={expense[1].amount}
-        date={expense[1].date}
-      ></ExpenseItems>
-      <ExpenseItems
-        title={expense[2].title}
-        amount={expense[2].amount}
-        date={expense[2].date}
-      ></ExpenseItems>
+      <NewExpense />
+      <Expenses data={expense} />
     </div>
   );
-}
+};
 
 export default App;
